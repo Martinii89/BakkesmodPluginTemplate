@@ -1,0 +1,53 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>BakkesPluginTemplate</Name>
+    <Description>Basic plugin boilerplate</Description>
+    <ProjectType>VC</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>BakkesPluginTemplate</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="BakkesPluginTemplate.vcxproj" File="BakkesPluginTemplate.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.vcxproj.filters">BakkesPluginTemplate.vcxproj.filters</ProjectItem>
+      <ProjectItem OpenInEditor="true"  ReplaceParameters="true" TargetFileName="$projectname$.cpp">plugin.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pch.cpp">pch.cpp</ProjectItem>
+      <ProjectItem OpenInEditor="true"  ReplaceParameters="true" TargetFileName="$projectname$GUI.cpp">pluginGUI.cpp</ProjectItem>
+      <ProjectItem OpenInEditor="true"  ReplaceParameters="true" TargetFileName="$projectname$.h">plugin.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pch.h">pch.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_rangeslider.h">IMGUI\imgui_rangeslider.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_searchablecombo.h">IMGUI\imgui_searchablecombo.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_timeline.h">IMGUI\imgui_timeline.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imguivariouscontrols.h">IMGUI\imguivariouscontrols.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imstb_rectpack.h">IMGUI\imstb_rectpack.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imstb_textedit.h">IMGUI\imstb_textedit.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imstb_truetype.h">IMGUI\imstb_truetype.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imconfig.h">IMGUI\imconfig.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui.h">IMGUI\imgui.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_additions.h">IMGUI\imgui_additions.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_impl_dx11.h">IMGUI\imgui_impl_dx11.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_impl_win32.h">IMGUI\imgui_impl_win32.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_internal.h">IMGUI\imgui_internal.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui.cpp">IMGUI\imgui.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_additions.cpp">IMGUI\imgui_additions.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_demo.cpp">IMGUI\imgui_demo.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_draw.cpp">IMGUI\imgui_draw.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_impl_dx11.cpp">IMGUI\imgui_impl_dx11.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_impl_win32.cpp">IMGUI\imgui_impl_win32.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_rangeslider.cpp">IMGUI\imgui_rangeslider.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_searchablecombo.cpp">IMGUI\imgui_searchablecombo.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_timeline.cpp">IMGUI\imgui_timeline.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_widgets.cpp">IMGUI\imgui_widgets.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imguivariouscontrols.cpp">IMGUI\imguivariouscontrols.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="BakkesMod.props">BakkesMod.props</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
