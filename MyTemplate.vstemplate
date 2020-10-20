@@ -48,6 +48,10 @@
       <ProjectItem ReplaceParameters="false" TargetFileName="imgui_widgets.cpp">IMGUI\imgui_widgets.cpp</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="imguivariouscontrols.cpp">IMGUI\imguivariouscontrols.cpp</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="BakkesMod.props">BakkesMod.props</ProjectItem>
+      <ProjectItem ReplaceParameters="true"  TargetFileName="$projectname$.rc">plugin.rc</ProjectItem>
+      <ProjectItem ReplaceParameters="false"  TargetFileName="resource.h">resource.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false"  TargetFileName="version.h">version.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false"  TargetFileName="update_version.ps1">update_version.ps1</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>
