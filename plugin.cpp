@@ -4,9 +4,11 @@
 
 BAKKESMOD_PLUGIN($projectname$, "write a plugin description here", plugin_version, PLUGINTYPE_FREEPLAY)
 
+std::shared_ptr<CVarManagerWrapper> _globalCvarManager;
 
 void $projectname$::onLoad()
 {
+	_globalCvarManager = cvarManager;
 	//cvarManager->log("Plugin loaded!");
 
 	//cvarManager->registerNotifier("my_aweseome_notifier", [&](std::vector<std::string> args) {
