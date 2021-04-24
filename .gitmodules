@@ -1,0 +1,3 @@
+[submodule "NetcodeManager"]
+	path = NetcodeManager
+	url = https://github.com/CinderBlocc/NetcodeManager.git

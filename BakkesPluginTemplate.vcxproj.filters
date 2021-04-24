@@ -22,6 +22,9 @@
     <Filter Include="imgui\implementation">
       <UniqueIdentifier>{d46c4711-0bdc-484c-bb4c-5526d80f7f5e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="NetcodeManager">
+      <UniqueIdentifier>{be471269-a032-488b-8dd3-f4f4f2a1a3ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$projectname$.cpp">
@@ -65,6 +68,15 @@
     </ClCompile>
     <ClCompile Include="$projectname$GUI.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fmt\src\format.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fmt\src\os.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetcodeManager\NetcodeManager.cpp">
+      <Filter>NetcodeManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,5 +125,16 @@
     <ClInclude Include="imgui\imgui_internal.h">
       <Filter>imgui\headers</Filter>
     </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetcodeManager\NetcodeManager.h">
+      <Filter>NetcodeManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="$projectname$.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

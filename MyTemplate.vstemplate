@@ -1,13 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
-    <Name>BakkesPluginTemplate</Name>
-    <Description>Basic plugin boilerplate</Description>
+    <Name>BakkesPluginNetcodeTemplate</Name>
+    <Description>Netcode plugin boilerplate</Description>
     <ProjectType>VC</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
     <SortOrder>1000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>BakkesPluginTemplate</DefaultName>
+    <DefaultName>BakkesPluginNetcodeTemplate</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
@@ -66,6 +66,8 @@
       <ProjectItem ReplaceParameters="false"  TargetFileName="ranges.h">fmt\include\fmt\ranges.h</ProjectItem>
       <ProjectItem ReplaceParameters="false"  TargetFileName="format.cc">fmt\src\format.cc</ProjectItem>
       <ProjectItem ReplaceParameters="false"  TargetFileName="os.cc">fmt\src\os.cc</ProjectItem>
+	  <ProjectItem ReplaceParameters="false"  TargetFileName="NetcodeManager.cpp">NetcodeManager\NetcodeManager.cpp</ProjectItem>
+	  <ProjectItem ReplaceParameters="false"  TargetFileName="NetcodeManager.h">NetcodeManager\NetcodeManager.h</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

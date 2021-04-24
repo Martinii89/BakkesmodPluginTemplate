@@ -9,6 +9,14 @@ std::shared_ptr<CVarManagerWrapper> _globalCvarManager;
 void $projectname$::onLoad()
 {
 	_globalCvarManager = cvarManager;
+
+	Netcode = std::make_shared<NetcodeManager>(cvarManager, gameWrapper, exports,
+		[this](const std::string& Message, PriWrapper Sender) { OnMessageReceived(Message, Sender); });
+
+	// Example netcode request
+	// cvarManager->registerNotifier("$projectname$_RequestBall", 
+	//	[this](std::vector<std::string> params){RequestBall();}, "Give requester the ball", PERMISSION_ALL);
+
 	//cvarManager->log("Plugin loaded!");
 
 	//cvarManager->registerNotifier("my_aweseome_notifier", [&](std::vector<std::string> args) {
@@ -45,4 +53,81 @@ void $projectname$::onLoad()
 
 void $projectname$::onUnload()
 {
+}
+
+// returns a valid serverwrapper only if the user is in a plugin environment that can use netcode
+ServerWrapper $projectname$::GetCurrentGameState() {
+	if (gameWrapper->IsInReplay()) {
+		return NULL;
+	} else if (gameWrapper->IsInOnlineGame()) {
+		// client is in an online game
+		ServerWrapper sw = gameWrapper->GetOnlineGame();
+
+		if (!sw) {
+			return sw;
+		}
+
+		auto playlist = sw.GetPlaylist();
+
+		if (!playlist) {
+			return NULL;
+		}
+
+		// playlist 24 is a LAN match for a client
+		if (playlist.GetPlaylistId() != 24) {
+			return NULL;
+		}
+
+		return sw;
+	} else {
+		// host is in an offline game
+		return gameWrapper->GetGameEventAsServer();
+	}
+}
+
+
+// SEND REQUEST //
+/*
+// Teleport ball example from CinderBlock's example plugin
+// Requests ball to be sent to a user
+void $projectname$::RequestBall()
+{
+	ServerWrapper sw = GetCurrentGameState();
+	if (!sw) { return; }
+    CarWrapper MyCar = gameWrapper->GetLocalCar();
+    if(MyCar.IsNull()) { return; }
+    PriWrapper MyPRI = MyCar.GetPRI();
+    if(MyPRI.IsNull()) { return; }
+
+    Netcode->SendNewMessage("give me the ball");
+}
+*/
+
+// FULFILL REQUEST //
+void $projectname$::OnMessageReceived(const std::string& Message, PriWrapper Sender)
+{
+    if(Sender.IsNull()) { return; }
+
+	ServerWrapper sw = GetCurrentGameState();
+
+	if (!sw) {
+		// exits if not in Netcode-friendly environment
+		return;
+	}
+
+	// Do your netcode here
+	// Teleport ball example from CinderBlock's example plugin
+	/*
+	if(Message == "give me the ball")
+    {
+        CarWrapper SenderCar = Sender.GetCar();
+        if(SenderCar.IsNull()) { return; }
+        BallWrapper Ball = sw.GetBall();
+        if(Ball.IsNull()) { return; }
+
+        //All clients should place the ball on the corresponding car
+        //This makes replication much smoother and avoids odd interpolation from host
+        Ball.SetLocation(SenderCar.GetLocation() + Vector(0, 0, Ball.GetRadius() + 100));
+        Ball.SetVelocity(SenderCar.GetVelocity());
+    }*/
 }
