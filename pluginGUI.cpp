@@ -1,8 +1,7 @@
 #include "pch.h"
 #include "$projectname$.h"
 
-// Plugin Settings Window code here
-/*
+/* Plugin Settings Window code here
 std::string $projectname$::GetPluginName() {
 	return "$projectname$";
 }

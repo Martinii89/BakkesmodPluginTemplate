@@ -2,6 +2,7 @@
 
 #include "bakkesmod/plugin/bakkesmodplugin.h"
 #include "bakkesmod/plugin/pluginwindow.h"
+#include "bakkesmod/plugin/PluginSettingsWindow.h"
 
 #include "NetcodeManager/NetcodeManager.h"
 #include "bakkesmod/plugin/PluginSettingsWindow.h"
@@ -13,7 +14,7 @@ constexpr auto plugin_version = stringify(VERSION_MAJOR) "." stringify(VERSION_M
 class $projectname$: public BakkesMod::Plugin::BakkesModPlugin/*, public BakkesMod::Plugin::PluginSettingsWindow*//*, public BakkesMod::Plugin::PluginWindow*/
 {
 private:
-    std::shared_ptr<NetcodeManager> Netcode;
+	std::shared_ptr<NetcodeManager> Netcode;
 
 public:
 	//std::shared_ptr<bool> enabled;
@@ -24,7 +25,7 @@ public:
 
 	ServerWrapper GetCurrentGameState();
 
-    void OnMessageReceived(const std::string& Message, PriWrapper Sender);
+	void OnMessageReceived(const std::string& Message, PriWrapper Sender);
 
 	// Teleport ball example from CinderBlock's example plugin
 	// https://github.com/CinderBlocc/NetcodeManagerExample
