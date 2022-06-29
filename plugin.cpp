@@ -2,25 +2,29 @@
 #include "$projectname$.h"
 
 
-BAKKESMOD_PLUGIN($projectname$, "write a plugin description here", plugin_version, PLUGINTYPE_FREEPLAY)
+BAKKESMOD_PLUGIN($projectname$, "$projectname$", plugin_version, PLUGINTYPE_FREEPLAY)
 
 std::shared_ptr<CVarManagerWrapper> _globalCvarManager;
+// If false, calls to DEBUGLOG("") will not print anything
+// Turn off debug testing logs in a public release easily
+bool DEBUGLOGENABLE = true;
 
 void $projectname$::onLoad()
 {
 	_globalCvarManager = cvarManager;
-	//cvarManager->log("Plugin loaded!");
+	//LOG("Plugin loaded!");
+	//DEBUGLOG("$projectname$ debug mode enabled");
 
 	//cvarManager->registerNotifier("my_aweseome_notifier", [&](std::vector<std::string> args) {
-	//	cvarManager->log("Hello notifier!");
+	//	LOG("Hello notifier!");
 	//}, "", 0);
 
 	//auto cvar = cvarManager->registerCvar("template_cvar", "hello-cvar", "just a example of a cvar");
 	//auto cvar2 = cvarManager->registerCvar("template_cvar2", "0", "just a example of a cvar with more settings", true, true, -10, true, 10 );
 
 	//cvar.addOnValueChanged([this](std::string cvarName, CVarWrapper newCvar) {
-	//	cvarManager->log("the cvar with name: " + cvarName + " changed");
-	//	cvarManager->log("the new value is:" + newCvar.getStringValue());
+	//	LOG("the cvar with name: {} changed", cvarName);
+	//	LOG("the new value is: {}", newCvar.getStringValue());
 	//});
 
 	//cvar2.addOnValueChanged(std::bind(&$projectname$::YourPluginMethod, this, _1, _2));
@@ -37,7 +41,7 @@ void $projectname$::onLoad()
 
 
 	//gameWrapper->HookEvent("Function TAGame.Ball_TA.Explode", [this](std::string eventName) {
-	//	cvarManager->log("Your hook got called and the ball went POOF");
+	//	LOG("Your hook got called and the ball went POOF");
 	//});
 	// You could also use std::bind here
 	//gameWrapper->HookEvent("Function TAGame.Ball_TA.Explode", std::bind(&$projectname$::YourPluginMethod, this);
