@@ -6,7 +6,6 @@ BAKKESMOD_PLUGIN($projectname$, "$projectname$", plugin_version, PLUGINTYPE_FREE
 
 std::shared_ptr<CVarManagerWrapper> _globalCvarManager;
 // If false, calls to DEBUGLOG("") will not print anything
-// Turn off debug testing logs in a public release easily
 bool DEBUGLOGENABLE = true;
 
 void $projectname$::onLoad()
@@ -14,6 +13,9 @@ void $projectname$::onLoad()
 	_globalCvarManager = cvarManager;
 	//LOG("Plugin loaded!");
 	//DEBUGLOG("$projectname$ debug mode enabled");
+
+	// LOG and DEBUGLOG use fmt format strings https://fmt.dev/latest/index.html
+	//DEBUGLOG("1 = {}, 2 = {}, pi = {}, false != {}", "one", 2, 3.14, true);
 
 	//cvarManager->registerNotifier("my_aweseome_notifier", [&](std::vector<std::string> args) {
 	//	LOG("Hello notifier!");
