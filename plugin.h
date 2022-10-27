@@ -8,38 +8,18 @@
 constexpr auto plugin_version = stringify(VERSION_MAJOR) "." stringify(VERSION_MINOR) "." stringify(VERSION_PATCH) "." stringify(VERSION_BUILD);
 
 
-class $projectname$: public BakkesMod::Plugin::BakkesModPlugin/*, public BakkesMod::Plugin::PluginSettingsWindow*//*, public BakkesMod::Plugin::PluginWindow*/
+class $projectname$: public BakkesMod::Plugin::BakkesModPlugin
+	//,public SettingsWindowBase // Uncomment if you wanna render your own tab in the settings menu
+	//,public PluginWindowBase // Uncomment if you want to render your own plugin window
 {
 
 	//std::shared_ptr<bool> enabled;
 
 	//Boilerplate
-	virtual void onLoad();
-	virtual void onUnload();
+	void onLoad() override;
+	//void onUnload() override; // Uncomment and implement if you need a unload method
 
-	// Inherited via PluginSettingsWindow
-	/*
-	void RenderSettings() override;
-	std::string GetPluginName() override;
-	void SetImGuiContext(uintptr_t ctx) override;
-	*/
-
-	// Inherited via PluginWindow
-	/*
-
-	bool isWindowOpen_ = false;
-	bool isMinimized_ = false;
-	std::string menuTitle_ = "$projectname$";
-
-	virtual void Render() override;
-	virtual std::string GetMenuName() override;
-	virtual std::string GetMenuTitle() override;
-	virtual void SetImGuiContext(uintptr_t ctx) override;
-	virtual bool ShouldBlockInput() override;
-	virtual bool IsActiveOverlay() override;
-	virtual void OnOpen() override;
-	virtual void OnClose() override;
-	
-	*/
+public:
+	//void RenderSettings() override; // Uncomment if you wanna render your own tab in the settings menu
+	//void RenderWindow() override; // Uncomment if you want to render your own plugin window
 };
-

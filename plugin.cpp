@@ -9,18 +9,23 @@ std::shared_ptr<CVarManagerWrapper> _globalCvarManager;
 void $projectname$::onLoad()
 {
 	_globalCvarManager = cvarManager;
-	//cvarManager->log("Plugin loaded!");
+	//LOG("Plugin loaded!");
+	// !! Enable debug logging by setting DEBUG_LOG = true in logging.h !!
+	//DEBUGLOG("$projectname$ debug mode enabled");
+
+	// LOG and DEBUGLOG use fmt format strings https://fmt.dev/latest/index.html
+	//DEBUGLOG("1 = {}, 2 = {}, pi = {}, false != {}", "one", 2, 3.14, true);
 
 	//cvarManager->registerNotifier("my_aweseome_notifier", [&](std::vector<std::string> args) {
-	//	cvarManager->log("Hello notifier!");
+	//	LOG("Hello notifier!");
 	//}, "", 0);
 
 	//auto cvar = cvarManager->registerCvar("template_cvar", "hello-cvar", "just a example of a cvar");
 	//auto cvar2 = cvarManager->registerCvar("template_cvar2", "0", "just a example of a cvar with more settings", true, true, -10, true, 10 );
 
 	//cvar.addOnValueChanged([this](std::string cvarName, CVarWrapper newCvar) {
-	//	cvarManager->log("the cvar with name: " + cvarName + " changed");
-	//	cvarManager->log("the new value is:" + newCvar.getStringValue());
+	//	LOG("the cvar with name: {} changed", cvarName);
+	//	LOG("the new value is: {}", newCvar.getStringValue());
 	//});
 
 	//cvar2.addOnValueChanged(std::bind(&$projectname$::YourPluginMethod, this, _1, _2));
@@ -37,12 +42,8 @@ void $projectname$::onLoad()
 
 
 	//gameWrapper->HookEvent("Function TAGame.Ball_TA.Explode", [this](std::string eventName) {
-	//	cvarManager->log("Your hook got called and the ball went POOF");
+	//	LOG("Your hook got called and the ball went POOF");
 	//});
 	// You could also use std::bind here
 	//gameWrapper->HookEvent("Function TAGame.Ball_TA.Explode", std::bind(&$projectname$::YourPluginMethod, this);
-}
-
-void $projectname$::onUnload()
-{
 }

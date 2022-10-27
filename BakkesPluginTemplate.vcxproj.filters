@@ -22,14 +22,20 @@
     <Filter Include="imgui\implementation">
       <UniqueIdentifier>{d46c4711-0bdc-484c-bb4c-5526d80f7f5e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PCH">
+      <UniqueIdentifier>{65407bae-1075-4bdd-9dfd-acc5a636ec02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin">
+      <UniqueIdentifier>{a1b543a5-c4b7-4cf1-8adf-c2f26cf59952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\header">
+      <UniqueIdentifier>{46d01869-81e6-496b-b2c1-aeeb13d6b983}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\src">
+      <UniqueIdentifier>{33ae5c6a-718c-410e-bdb8-9c032f65c710}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$projectname$.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="imgui\imgui.cpp">
       <Filter>imgui\implementation</Filter>
     </ClCompile>
@@ -63,17 +69,20 @@
     <ClCompile Include="imgui\imguivariouscontrols.cpp">
       <Filter>imgui\implementation</Filter>
     </ClCompile>
-    <ClCompile Include="$projectname$GUI.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="IMGUI\imgui_stdlib.cpp">
+      <Filter>imgui\implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="$projectname$.cpp">
+      <Filter>Plugin\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiBase.cpp">
+      <Filter>Plugin\src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$projectname$.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="imgui\imgui_rangeslider.h">
       <Filter>imgui\headers</Filter>
     </ClInclude>
@@ -113,5 +122,28 @@
     <ClInclude Include="imgui\imgui_internal.h">
       <Filter>imgui\headers</Filter>
     </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IMGUI\imgui_stdlib.h">
+      <Filter>imgui\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="$projectname$.h">
+      <Filter>Plugin\header</Filter>
+    </ClInclude>
+    <ClInclude Include="logging.h">
+      <Filter>Plugin\header</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiBase.h">
+      <Filter>Plugin\header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UpgradeTest.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

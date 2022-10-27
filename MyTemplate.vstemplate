@@ -20,9 +20,13 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.vcxproj.filters">BakkesPluginTemplate.vcxproj.filters</ProjectItem>
       <ProjectItem OpenInEditor="true"  ReplaceParameters="true" TargetFileName="$projectname$.cpp">plugin.cpp</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="pch.cpp">pch.cpp</ProjectItem>
-      <ProjectItem OpenInEditor="true"  ReplaceParameters="true" TargetFileName="$projectname$GUI.cpp">pluginGUI.cpp</ProjectItem>
       <ProjectItem OpenInEditor="true"  ReplaceParameters="true" TargetFileName="$projectname$.h">plugin.h</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="GuiBase.h">GuiBase.h</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="GuiBase.cpp">GuiBase.cpp</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="pch.h">pch.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="logging.h">logging.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_stdlib.h">IMGUI\imgui_stdlib.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_stdlib.cpp">IMGUI\imgui_stdlib.cpp</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="imgui_rangeslider.h">IMGUI\imgui_rangeslider.h</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="imgui_searchablecombo.h">IMGUI\imgui_searchablecombo.h</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="imgui_timeline.h">IMGUI\imgui_timeline.h</ProjectItem>
@@ -52,20 +56,6 @@
       <ProjectItem ReplaceParameters="false"  TargetFileName="resource.h">resource.h</ProjectItem>
       <ProjectItem ReplaceParameters="false"  TargetFileName="version.h">version.h</ProjectItem>
       <ProjectItem ReplaceParameters="false"  TargetFileName="update_version.ps1">update_version.ps1</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="chrono.h">fmt\include\fmt\chrono.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="color.h">fmt\include\fmt\color.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="compile.h">fmt\include\fmt\compile.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="core.h">fmt\include\fmt\core.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="format-inl.h">fmt\include\fmt\format-inl.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="format.h">fmt\include\fmt\format.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="locale.h">fmt\include\fmt\locale.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="os.h">fmt\include\fmt\os.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="ostream.h">fmt\include\fmt\ostream.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="posix.h">fmt\include\fmt\posix.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="printf.h">fmt\include\fmt\printf.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="ranges.h">fmt\include\fmt\ranges.h</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="format.cc">fmt\src\format.cc</ProjectItem>
-      <ProjectItem ReplaceParameters="false"  TargetFileName="os.cc">fmt\src\os.cc</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>
