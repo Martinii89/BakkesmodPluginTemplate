@@ -54,13 +54,13 @@ struct FormatWstring
 template <typename... Args>
 void LOG(std::string_view format_str, Args&&... args)
 {
-	_globalCvarManager->log(std::vformat(format_str, std::make_format_args(std::forward<Args>(args)...)));
+	_globalCvarManager->log(std::vformat(format_str, std::make_format_args(args...)));
 }
 
 template <typename... Args>
 void LOG(std::wstring_view format_str, Args&&... args)
 {
-	_globalCvarManager->log(std::vformat(format_str, std::make_wformat_args(std::forward<Args>(args)...)));
+	_globalCvarManager->log(std::vformat(format_str, std::make_wformat_args(args...)));
 }
 
 
@@ -69,7 +69,7 @@ void DEBUGLOG(const FormatString& format_str, Args&&... args)
 {
 	if constexpr (DEBUG_LOG)
 	{
-		auto text = std::vformat(format_str.str, std::make_format_args(std::forward<Args>(args)...));
+		auto text = std::vformat(format_str.str, std::make_format_args(args...));
 		auto location = format_str.GetLocation();
 		_globalCvarManager->log(std::format("{} {}", text, location));
 	}
@@ -80,7 +80,7 @@ void DEBUGLOG(const FormatWstring& format_str, Args&&... args)
 {
 	if constexpr (DEBUG_LOG)
 	{
-		auto text = std::vformat(format_str.str, std::make_wformat_args(std::forward<Args>(args)...));
+		auto text = std::vformat(format_str.str, std::make_wformat_args(args...));
 		auto location = format_str.GetLocation();
 		_globalCvarManager->log(std::format(L"{} {}", text, location));
 	}
